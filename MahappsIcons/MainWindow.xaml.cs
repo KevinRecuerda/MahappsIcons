@@ -76,9 +76,9 @@
                 var rectangle = CreateRectangle(icon);
                 var toggleButton = CreateToggleButton(rectangle);
 
-                var textBlock = CreateTextBlock(icon);
+                var textBox = CreateTextBox(icon);
 
-                var stackPanel = CreateStackPanel(toggleButton, textBlock);
+                var stackPanel = CreateStackPanel(toggleButton, textBox);
                 var border = CreateBorder(stackPanel);
 
                 this.CustomPanel.Children.Add(border);
@@ -95,23 +95,27 @@
                              };
         }
 
-        private static StackPanel CreateStackPanel(ToggleButton toggleButton, TextBlock textBlock)
+        private static StackPanel CreateStackPanel(ToggleButton toggleButton, TextBox textBox)
         {
             return new StackPanel
                                  {
                                      Orientation = Orientation.Vertical,
                                      Margin = new Thickness(PaddingOnStackPanel),
-                                     Children = { toggleButton, textBlock }
+                                     Children = { toggleButton, textBox }
                                  };
         }
 
-        private static TextBlock CreateTextBlock(string icon)
+        private static TextBox CreateTextBox(string icon)
         {
-            return new TextBlock
+            return new TextBox
                                 {
                                     Text = icon,
                                     TextAlignment = TextAlignment.Center,
-                                    Foreground = (Brush)Application.Current.Resources["Orange"]
+                                    Foreground = (Brush)Application.Current.Resources["Orange"],
+                                    Background = Brushes.Transparent,
+                                    BorderThickness= new Thickness(0),
+                                    IsReadOnly = true,
+                                    TextWrapping = TextWrapping.Wrap
                                 };
         }
 
