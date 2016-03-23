@@ -4,6 +4,7 @@
     xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
     xmlns:customPanel="clr-namespace:MahappsIcons.CustomPanel"
     Title="Mahapps Icons" 
+    Icon="pack://application:,,,/Resources/logo.ico"
     WindowState="Maximized">
     <DockPanel LastChildFill="True">
 
